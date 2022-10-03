@@ -13,6 +13,9 @@ export class AppComponent {
     this.oneSignal.init({
       appId: 'ab8a3207-b604-4ad5-b466-7884136a9e88',
     });
+    this.oneSignal.on('subscriptionChange', function(isSubscribed) {
+      console.log("The user's subscription state is now:", isSubscribed);
+    });
   }
 
   onHandleTag(tag: string) {
