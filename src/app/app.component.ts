@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private oneSignal: OneSignal){
     
     this.oneSignal.init({
-      appId: '4a113cf5-d9b9-4800-a361-6642f095b061'
+      appId: 'ab8a3207-b604-4ad5-b466-7884136a9e88'
     })
   }
 }
