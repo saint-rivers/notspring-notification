@@ -4,15 +4,20 @@ import { OneSignal } from 'onesignal-ngx';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'notspring-notification';
-  
-  constructor(private oneSignal: OneSignal){
-    
+
+  constructor(private oneSignal: OneSignal) {
     this.oneSignal.init({
-      appId: 'ab8a3207-b604-4ad5-b466-7884136a9e88'
-    })
+      appId: 'ab8a3207-b604-4ad5-b466-7884136a9e88',
+    });
+  }
+
+  onHandleTag(tag: string) {
+    this.oneSignal.sendTag('tech', tag).then(() => {
+      console.log('sent tag: ' + tag);
+    });
   }
 }
